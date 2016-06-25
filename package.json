@@ -1,0 +1,33 @@
+{
+  "name": "ap-style-title-case",
+  "version": "1.0.0",
+  "description": "Convert a string to title case using AP Stylebook rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeke/ap-style-title-case.git"
+  },
+  "keywords": [
+    "titlecase",
+    "capitalization",
+    "titles",
+    "title-case",
+    "language",
+    "english",
+    "grammar",
+    "capitalization"
+  ],
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/ap-style-title-case/issues"
+  },
+  "homepage": "https://github.com/zeke/ap-style-title-case#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  }
+}
