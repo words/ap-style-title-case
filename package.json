@@ -1,6 +1,6 @@
 {
   "name": "ap-style-title-case",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert a string to title case using AP Stylebook rules",
   "main": "index.js",
   "scripts": {
