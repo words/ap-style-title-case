@@ -7,7 +7,8 @@ test('titleCase', function (t) {
     ['why sunless tanning is A hot trend', 'Why Sunless Tanning Is a Hot Trend'],
     ['Satin Sheets are a Luxury you Can Afford', 'Satin Sheets Are a Luxury You Can Afford'],
     ['the Dangers Of Hiking Without Proper Shoes', 'The Dangers of Hiking Without Proper Shoes'],
-    ['an hour or so', 'An Hour or So']
+    ['an hour or so', 'An Hour or So'],
+    ['Of the meaning Of Of', 'Of the Meaning of Of']
   ]
 
   patterns.forEach(pattern => {

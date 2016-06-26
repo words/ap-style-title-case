@@ -6,9 +6,9 @@ function titleCase (str) {
   var words = str.trim().split(/\s/)
 
   return words
-    .map(word => {
-      if (word === words[0]) return capitalize(word)
-      if (word === words[words.length - 1]) return capitalize(word)
+    .map((word, index) => {
+      if (index === 0) return capitalize(word)
+      if (index === words.length - 1) return capitalize(word)
       if (stopwords.indexOf(word.toLowerCase()) > -1) return word.toLowerCase()
       return capitalize(word)
     })
