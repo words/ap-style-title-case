@@ -3,7 +3,7 @@ const stopwords = 'a an and at but by for in nor of on or so the to up yet'.spli
 function titleCase (str) {
   if (!str) return null
   if (!str.length) return null
-  var words = str.trim().split(/\s/)
+  var words = str.trim().split(/\s+/)
 
   return words
     .map((word, index) => {
