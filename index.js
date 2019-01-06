@@ -1,8 +1,7 @@
 const stopwords = 'a an and at but by for in nor of on or so the to up yet'.split(' ')
 
 function titleCase (str, options) {
-  if (!str) return null
-  if (!str.length) return ''
+  if (!str) return ''
   if (!options) options = {}
 
   const stop_words = options.stopwords || stopwords
