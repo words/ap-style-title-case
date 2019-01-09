@@ -9,11 +9,13 @@ test('titleCase', function (t) {
     ['the Dangers Of Hiking Without Proper Shoes', 'The Dangers of Hiking Without Proper Shoes'],
     ['an hour or so', 'An Hour or So'],
     ['Of the meaning Of Of', 'Of the Meaning of Of'],
-    ['Thing With     Extra Spaces', 'Thing With Extra Spaces']
+    ['Thing With     Extra Spaces', 'Thing With Extra Spaces'],
+    ['Thing with     extra spaces', 'Thing With     Extra Spaces', true],
+    ['Observations of isolated pulsars and disk-fed X-ray binaries.', 'Observations of Isolated Pulsars and Disk-Fed X-Ray Binaries.'],
   ]
 
   patterns.forEach(pattern => {
-    t.equal(titleCase(pattern[0]), pattern[1], pattern[1])
+    t.equal(titleCase(pattern[0], { keepSpaces: pattern[2 ]}), pattern[1], pattern[1])
   })
   t.end()
 })
