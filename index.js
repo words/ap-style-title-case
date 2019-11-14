@@ -1,30 +1,38 @@
-const stopwords = 'a an and at but by for in nor of on or so the to up yet'.split(' ')
+'use strict'
 
-function titleCase (str, options) {
+module.exports = titleCase
+
+const stopwords = 'a an and at but by for in nor of on or so the to up yet'
+const defaults = stopwords.split(' ')
+
+function titleCase(str, options) {
+  const opts = options || {}
+
   if (!str) return ''
-  if (!options) options = {}
 
-  const stop_words = options.stopwords || stopwords
-
+  const stop = opts.stopwords || defaults
+  const keep = options.keepSpaces
   const splitter = /(\s+|[-‑–—])/
-  var words = str.split(splitter)
 
-  return words
-    .map((word, index) => {
-      if (word.match(/\s+/)) return options.keepSpaces ? word : ' '
+  return str
+    .split(splitter)
+    .map((word, index, all) => {
+      if (word.match(/\s+/)) return keep ? word : ' '
       if (word.match(splitter)) return word
 
-      if (index === 0) return capitalize(word)
+      if (
+        index !== 0 &&
+        index !== all.length - 1 &&
+        stop.includes(word.toLowerCase())
+      ) {
+        return word.toLowerCase()
+      }
 
-      if (index === words.length - 1) return capitalize(word)
-      if (stop_words.includes(word.toLowerCase())) return word.toLowerCase()
       return capitalize(word)
     })
     .join('')
 }
 
-function capitalize (str) {
+function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
-
-module.exports = titleCase

@@ -2,14 +2,7 @@
   "name": "ap-style-title-case",
   "version": "1.1.0",
   "description": "Convert a string to title case using AP Stylebook rules",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test.js | tap-spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zeke/ap-style-title-case.git"
-  },
+  "license": "MIT",
   "keywords": [
     "titlecase",
     "capitalization",
@@ -20,14 +13,45 @@
     "grammar",
     "capitalization"
   ],
+  "repository": "words/ap-style-title-case",
+  "bugs": "https://github.com/words/ap-style-title-case/issues",
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zeke/ap-style-title-case/issues"
-  },
-  "homepage": "https://github.com/zeke/ap-style-title-case#readme",
+  "contributors": [
+    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.2"
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "test-api": "node test",
+    "test": "npm run format && npm run test-api"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
