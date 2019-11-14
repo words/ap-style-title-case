@@ -69,17 +69,17 @@ Convert a value (`string`) to title case (`string`) using [AP][]/[APA][] style.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/afinn-111.svg
+[build-badge]: https://img.shields.io/travis/words/ap-style-title-case.svg
 
-[build]: https://travis-ci.org/words/afinn-111
+[build]: https://travis-ci.org/words/ap-style-title-case
 
-[downloads-badge]: https://img.shields.io/npm/dm/afinn-111.svg
+[downloads-badge]: https://img.shields.io/npm/dm/ap-style-title-case.svg
 
-[downloads]: https://www.npmjs.com/package/afinn-111
+[downloads]: https://www.npmjs.com/package/ap-style-title-case
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/afinn-111.svg
+[size-badge]: https://img.shields.io/bundlephobia/minzip/ap-style-title-case.svg
 
-[size]: https://bundlephobia.com/result?p=afinn-111
+[size]: https://bundlephobia.com/result?p=ap-style-title-case
 
 [npm]: https://docs.npmjs.com/cli/install
 
