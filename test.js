@@ -1,8 +1,18 @@
-const test = require('tape')
-const titleCase = require('.')
+var test = require('tape')
+var ap = require('.')
 
-test('titleCase', function(t) {
-  const patterns = [
+test('ap-style-title-case', function(t) {
+  t.same(ap(), '', 'should return an empty string w/o title')
+
+  t.same(ap('this is a test'), 'This Is a Test', 'should capitalize')
+
+  t.same(
+    ap('Thing With     Extra Spaces'),
+    'Thing With Extra Spaces',
+    'should remove spaces'
+  )
+
+  var patterns = [
     ['this is a test', 'This Is a Test'],
     [
       'why sunless tanning is A hot trend',
@@ -27,23 +37,8 @@ test('titleCase', function(t) {
   ]
 
   patterns.forEach(pattern => {
-    t.equal(
-      titleCase(pattern[0], {keepSpaces: pattern[2]}),
-      pattern[1],
-      pattern[1]
-    )
+    t.equal(ap(pattern[0], {keepSpaces: pattern[2]}), pattern[1], pattern[1])
   })
-  t.end()
-})
 
-test('allow undefined `options`', function(t) {
-  const patterns = [
-    ['this is a test', 'This Is a Test'],
-    ['Thing With     Extra Spaces', 'Thing With Extra Spaces']
-  ]
-
-  patterns.forEach(pattern => {
-    t.equal(titleCase(pattern[0]), pattern[1], pattern[1])
-  })
   t.end()
 })
