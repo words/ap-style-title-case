@@ -1,6 +1,7 @@
 # ap-style-title-case
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -72,6 +73,10 @@ Convert a value (`string`) to title case (`string`) using [AP][]/[APA][] style.
 [build-badge]: https://img.shields.io/travis/words/ap-style-title-case.svg
 
 [build]: https://travis-ci.org/words/ap-style-title-case
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/words/ap-style-title-case.svg
+
+[coverage]: https://codecov.io/github/words/ap-style-title-case
 
 [downloads-badge]: https://img.shields.io/npm/dm/ap-style-title-case.svg
 
