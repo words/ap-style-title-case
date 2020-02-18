@@ -11,7 +11,7 @@ function titleCase(str, options) {
   if (!str) return ''
 
   const stop = opts.stopwords || defaults
-  const keep = options.keepSpaces
+  const keep = opts.keepSpaces
   const splitter = /(\s+|[-‑–—])/
 
   return str

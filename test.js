@@ -35,3 +35,15 @@ test('titleCase', function(t) {
   })
   t.end()
 })
+
+test('allow undefined `options`', function(t) {
+  const patterns = [
+    ['this is a test', 'This Is a Test'],
+    ['Thing With     Extra Spaces', 'Thing With Extra Spaces']
+  ]
+
+  patterns.forEach(pattern => {
+    t.equal(titleCase(pattern[0]), pattern[1], pattern[1])
+  })
+  t.end()
+})
