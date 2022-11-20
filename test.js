@@ -1,7 +1,7 @@
-var test = require('tape')
-var ap = require('.')
+const test = require('tape')
+const ap = require('.')
 
-test('ap-style-title-case', function(t) {
+test('ap-style-title-case', function (t) {
   t.same(ap(), '', 'should return an empty string w/o title')
 
   t.same(ap('this is a test'), 'This Is a Test', 'should capitalize')
@@ -12,7 +12,7 @@ test('ap-style-title-case', function(t) {
     'should remove spaces'
   )
 
-  var patterns = [
+  const patterns = [
     ['this is a test', 'This Is a Test'],
     [
       'why sunless tanning is A hot trend',
@@ -36,9 +36,9 @@ test('ap-style-title-case', function(t) {
     ]
   ]
 
-  patterns.forEach(pattern => {
+  for (const pattern of patterns) {
     t.equal(ap(pattern[0], {keepSpaces: pattern[2]}), pattern[1], pattern[1])
-  })
+  }
 
   t.end()
 })

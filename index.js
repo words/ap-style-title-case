@@ -1,24 +1,22 @@
-'use strict'
-
 module.exports = titleCase
 
 const stopwords = 'a an and at but by for in nor of on or so the to up yet'
 const defaults = stopwords.split(' ')
 
-function titleCase(str, options) {
-  const opts = options || {}
+function titleCase(value, options) {
+  const configuration = options || {}
 
-  if (!str) return ''
+  if (!value) return ''
 
-  const stop = opts.stopwords || defaults
-  const keep = opts.keepSpaces
+  const stop = configuration.stopwords || defaults
+  const keep = configuration.keepSpaces
   const splitter = /(\s+|[-‑–—])/
 
-  return str
+  return value
     .split(splitter)
     .map((word, index, all) => {
-      if (word.match(/\s+/)) return keep ? word : ' '
-      if (word.match(splitter)) return word
+      if (/\s+/.test(word)) return keep ? word : ' '
+      if (splitter.test(word)) return word
 
       if (
         index !== 0 &&
@@ -33,6 +31,6 @@ function titleCase(str, options) {
     .join('')
 }
 
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
+function capitalize(value) {
+  return value.charAt(0).toUpperCase() + value.slice(1)
 }
