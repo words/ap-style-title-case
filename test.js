@@ -16,6 +16,7 @@ test('ap-style-title-case', function (t) {
     'should remove spaces'
   )
 
+  /** @type {Array<[string, string, boolean?]>} */
   const patterns = [
     ['this is a test', 'This Is a Test'],
     [

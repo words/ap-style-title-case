@@ -1,6 +1,17 @@
+/**
+ * @typedef Options
+ * @property {Array<string>} [stopwords]
+ * @property {boolean} [keepSpaces]
+ */
+
 const stopwords = 'a an and at but by for in nor of on or so the to up yet'
 const defaults = stopwords.split(' ')
 
+/**
+ * @param {string} [value]
+ * @param {Options} [options]
+ * @returns {string}
+ */
 export function apStyleTitleCase(value, options) {
   const configuration = options || {}
 
@@ -29,6 +40,11 @@ export function apStyleTitleCase(value, options) {
     .join('')
 }
 
+/**
+ *
+ * @param {string} value
+ * @returns {string}
+ */
 function capitalize(value) {
   return value.charAt(0).toUpperCase() + value.slice(1)
 }
