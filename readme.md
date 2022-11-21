@@ -141,9 +141,9 @@ This package is safe.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/ap-style-title-case.svg
+[build-badge]: https://github.com/words/ap-style-title-case/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/words/ap-style-title-case
+[build]: https://github.com/words/ap-style-title-case/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/words/ap-style-title-case.svg
 
