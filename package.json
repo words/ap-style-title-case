@@ -20,13 +20,14 @@
     "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
+  "sideEffects": false,
+  "type": "module",
   "main": "index.js",
   "files": [
     "index.js"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "nyc": "^15.0.0",
+    "c8": "^7.0.0",
     "prettier": "^2.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-wooorm": "^9.0.0",
@@ -34,16 +35,11 @@
     "xo": "^0.53.0"
   },
   "scripts": {
-    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
-    "test-api": "node test",
-    "test-coverage": "nyc --reporter lcov tape test.js",
+    "prepack": "npm run format",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node --conditions development test.js",
+    "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
     "test": "npm run format && npm run test-coverage"
-  },
-  "nyc": {
-    "check-coverage": true,
-    "lines": 100,
-    "functions": 100,
-    "branches": 100
   },
   "prettier": {
     "tabWidth": 2,
@@ -54,11 +50,7 @@
     "trailingComma": "none"
   },
   "xo": {
-    "prettier": true,
-    "esnext": false,
-    "rules": {
-      "unicorn/prefer-module": "off"
-    }
+    "prettier": true
   },
   "remarkConfig": {
     "plugins": [

@@ -1,9 +1,7 @@
-module.exports = titleCase
-
 const stopwords = 'a an and at but by for in nor of on or so the to up yet'
 const defaults = stopwords.split(' ')
 
-function titleCase(value, options) {
+export function apStyleTitleCase(value, options) {
   const configuration = options || {}
 
   if (!value) return ''

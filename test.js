@@ -1,13 +1,17 @@
-const test = require('tape')
-const ap = require('.')
+import test from 'tape'
+import {apStyleTitleCase} from './index.js'
 
 test('ap-style-title-case', function (t) {
-  t.same(ap(), '', 'should return an empty string w/o title')
-
-  t.same(ap('this is a test'), 'This Is a Test', 'should capitalize')
+  t.same(apStyleTitleCase(), '', 'should return an empty string w/o title')
 
   t.same(
-    ap('Thing With     Extra Spaces'),
+    apStyleTitleCase('this is a test'),
+    'This Is a Test',
+    'should capitalize'
+  )
+
+  t.same(
+    apStyleTitleCase('Thing With     Extra Spaces'),
     'Thing With Extra Spaces',
     'should remove spaces'
   )
@@ -37,7 +41,11 @@ test('ap-style-title-case', function (t) {
   ]
 
   for (const pattern of patterns) {
-    t.equal(ap(pattern[0], {keepSpaces: pattern[2]}), pattern[1], pattern[1])
+    t.equal(
+      apStyleTitleCase(pattern[0], {keepSpaces: pattern[2]}),
+      pattern[1],
+      pattern[1]
+    )
   }
 
   t.end()
