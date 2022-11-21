@@ -43,14 +43,14 @@ npm install ap-style-title-case
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {apStyleTitleCase} from 'https://esm.sh/ap-style-title-case@1'
+import {apStyleTitleCase} from 'https://esm.sh/ap-style-title-case@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {apStyleTitleCase} from 'https://esm.sh/ap-style-title-case@1?bundle'
+  import {apStyleTitleCase} from 'https://esm.sh/ap-style-title-case@2?bundle'
 </script>
 ```
 
