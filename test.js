@@ -1,16 +1,21 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {apStyleTitleCase} from './index.js'
 
-test('ap-style-title-case', function (t) {
-  t.same(apStyleTitleCase(), '', 'should return an empty string w/o title')
+test('ap-style-title-case', function () {
+  assert.equal(
+    apStyleTitleCase(),
+    '',
+    'should return an empty string w/o title'
+  )
 
-  t.same(
+  assert.equal(
     apStyleTitleCase('this is a test'),
     'This Is a Test',
     'should capitalize'
   )
 
-  t.same(
+  assert.equal(
     apStyleTitleCase('Thing With     Extra Spaces'),
     'Thing With Extra Spaces',
     'should remove spaces'
@@ -42,12 +47,10 @@ test('ap-style-title-case', function (t) {
   ]
 
   for (const pattern of patterns) {
-    t.equal(
+    assert.equal(
       apStyleTitleCase(pattern[0], {keepSpaces: pattern[2]}),
       pattern[1],
       pattern[1]
     )
   }
-
-  t.end()
 })
