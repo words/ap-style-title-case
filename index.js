@@ -15,7 +15,7 @@ const stopwords = 'a an and at but by for in nor of on or so the to up yet'
 const defaults = stopwords.split(' ')
 
 /**
- * Convert a value to title case using AP/APA style.
+ * Convert a value to AP/APA title case.
  *
  * @param {string} [value]
  *   Short text of unknown casing.
