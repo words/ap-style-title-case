@@ -43,7 +43,8 @@ test('ap-style-title-case', function () {
     [
       'Observations of isolated pulsars and disk-fed X-ray binaries.',
       'Observations of Isolated Pulsars and Disk-Fed X-Ray Binaries.'
-    ]
+    ],
+    ['Shakspeare; Or, the Poet', 'Shakspeare; or, the Poet']
   ]
 
   for (const pattern of patterns) {

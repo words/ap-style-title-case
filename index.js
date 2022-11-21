@@ -31,13 +31,17 @@ export function apStyleTitleCase(value, options) {
 
   const stop = configuration.stopwords || defaults
   const keep = configuration.keepSpaces
-  const splitter = /(\s+|[-‑–—])/
+  const splitter = /(\s+|[-‑–—,:;!?()])/
 
   return value
     .split(splitter)
     .map((word, index, all) => {
-      if (/\s+/.test(word)) return keep ? word : ' '
-      if (splitter.test(word)) return word
+      // The splitter:
+      if (index % 2) {
+        if (/\s+/.test(word)) return keep ? word : ' '
+        return word
+      }
+
       const lower = word.toLowerCase()
 
       if (index !== 0 && index !== all.length - 1 && stop.includes(lower)) {
